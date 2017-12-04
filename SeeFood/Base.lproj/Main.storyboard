@@ -18,21 +18,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9k-vB-iCD">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdog-background" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-BK-I8i" userLabel="Static Hotdog Image">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="WBT-kG-fUn"/>
+                                    <constraint firstAttribute="width" constant="240" id="cpt-Dz-eXc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9k-vB-iCD" userLabel="User Chosen Image">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-8C-MUC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="fPn-hc-nuc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DEV-Dt-AQ7">
+                                <rect key="frame" x="127" y="565" width="121" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="shareTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sN-eX-wKu"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="g9y-BK-I8i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ld-8I-eFN"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cw9-Ia-H9q"/>
+                            <constraint firstItem="g9y-BK-I8i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MO0-0M-LEN"/>
+                            <constraint firstItem="d0z-8C-MUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R0Y-eB-naO"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RmR-CW-P83"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d0z-8C-MUC" secondAttribute="trailing" id="dzq-In-vZJ"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fWn-FI-bpr"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hUB-xL-lOe"/>
+                            <constraint firstItem="d0z-8C-MUC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uK0-9N-5Tj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="DGD-nJ-vGZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="l1n-eb-cVs">
+                            <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                             <connections>
                                 <action selector="cameraTapped:" destination="BYZ-38-t0r" id="vfv-gb-1fw"/>
                             </connections>
@@ -40,6 +76,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ImageView" destination="d9k-vB-iCD" id="bnl-kv-gVC"/>
+                        <outlet property="cameraButton" destination="l1n-eb-cVs" id="gEw-W5-zIA"/>
+                        <outlet property="shareButton" destination="DEV-Dt-AQ7" id="lRX-0L-4Lb"/>
+                        <outlet property="topBarImageView" destination="d0z-8C-MUC" id="DfK-z7-sOW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -54,6 +93,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fpy-Mz-sa9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                            <color key="textColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -65,4 +108,7 @@
             <point key="canvasLocation" x="-426" y="133"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hotdog-background" width="191" height="143"/>
+    </resources>
 </document>
