@@ -30,8 +30,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         shareButton.isHidden = true
         
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .camera
+//        imagePicker.allowsEditing = false
         
     }
 
@@ -39,10 +39,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-//        cameraButton.isEnabled = false
-//        DispatchQueue.main.async {
-//            SVProgressHUD.show()
-//        }
+        cameraButton.isEnabled = false
+        
+        SVProgressHUD.show()
+
         
         
         if let userPickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -66,6 +66,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func detect(image: CIImage) {
         
+        
         guard let model = try? VNCoreMLModel(for: Inceptionv3().model) else {
             fatalError("Loading CoreML Model Failed")
         }
@@ -75,8 +76,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 fatalError("Model failed to process image.")
             }
             
-//            self.cameraButton.isEnabled = true
-            SVProgressHUD.dismiss()
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                self.cameraButton.isEnabled = true
+            }
             
 //            self.shareButton.isHidden = false
             
@@ -84,15 +87,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             if let firstResult = results.first {
                 if firstResult.identifier.contains("hotdog") {
-                    self.navigationItem.title = "Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.topBarImageView.image = UIImage(named:"hotdog")
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Hotdog!"
+                        self.navigationController?.navigationBar.barTintColor = UIColor.green
+                        self.navigationController?.navigationBar.isTranslucent = false
+                        self.topBarImageView.image = UIImage(named:"hotdog")
+                    }
                 } else {
-                    self.navigationItem.title = "Not Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.red
-                    self.navigationController?.navigationBar.isTranslucent = false
-                    self.topBarImageView.image = UIImage(named:"not-hotdog")
+                    DispatchQueue.main.async {
+                        self.navigationItem.title = "Not Hotdog!"
+                        self.navigationController?.navigationBar.barTintColor = UIColor.red
+                        self.navigationController?.navigationBar.isTranslucent = false
+                        self.topBarImageView.image = UIImage(named:"not-hotdog")
+                    }
                 }
             }
             
@@ -113,6 +120,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
+        
+        imagePicker.sourceType = .camera
+        imagePicker.allowsEditing = false
         
         present(imagePicker, animated: true, completion: nil)
         
