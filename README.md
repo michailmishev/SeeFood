@@ -5,7 +5,7 @@
 
 <br />
 
-The Application is written in Swift 4 and requires iOS11 because it uses Machine Learning for Image Recognition. SeeFood prompts the user for access to the Camera functionality and once a photo has been taken the Core ML Framework and the pre-trained Inception v3 model identify what has been captured. The prediction works very accurately for everything but in order for the app to looks like the one from the tv show, it only checks if the clasification has been a hotdog or not. The pre-trained ML model loads on the physical device once the application has been installed, so SeeFood doesn't requires Internet access to work.
+The Application is written in Swift 4 and requires iOS11 because it uses Machine Learning for Image Recognition. SeeFood prompts the user for access to the Camera functionality and once a photo has been taken the Core ML Framework and the pre-trained Inception v3 model identify what has been captured. The prediction works very accurately for everything but in order for the app to looks like the one from the tv show, it only checks if the clasification has been a hotdog or not. After installation the pre-trained ML model loads on the physical device, so SeeFood works without Internet access.
 
 <br />
 
