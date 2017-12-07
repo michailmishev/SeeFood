@@ -1,11 +1,11 @@
 # SeeFood (Shazam for Food)
 
 
-### SeeFood is a copy of an app from the 'Silicon Valley' tv show. Its original idea was to be 'Shazam for food', but unfortunatelly only recognise if it is a Hotdog or Not Hotdog! 🤔
+### SeeFood is a copy of an app from the 'Silicon Valley' tv show. Its original idea was to be 'Shazam for food', but unfortunatelly it only recognises Hotdogs or Not Hotdogs! 🤔
 
 <br />
 
-The Application is written in Swift 4 and requires iOS11 because it uses Machine Learning for Image Recognition. SeeFood prompts for access to the Camera functionality and once a photo has been taken the Core ML Framework and the pre-trained Inception v3 model identify what has been captured. The prediction what the image shows works very accurately but in order to look like the Silicon Valley's SeeFood, the app only checks if the clasification has been a hotdog or not. The pre-trained ML model loads on the physical device once the application has been installed, so SeeFood doesn't requires Internet access.
+The Application is written in Swift 4 and requires iOS11 because it uses Machine Learning for Image Recognition. SeeFood prompts the user for access to the Camera functionality and once a photo has been taken the Core ML Framework and the pre-trained Inception v3 model identify what has been captured. The prediction works very accurately for everything but in order for the app to looks like the one from the tv show, it only checks if the clasification has been a hotdog or not. The pre-trained ML model loads on the physical device once the application has been installed, so SeeFood doesn't requires Internet access to work.
 
 <br />
 
