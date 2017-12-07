@@ -18,8 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Is it ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2F-Ha-xOi" userLabel="Is it ?">
+                                <rect key="frame" x="131" y="189.5" width="114" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DoT-9n-9EH"/>
+                                    <constraint firstAttribute="width" constant="114" id="hwI-QB-3wb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="50"/>
+                                <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdog-background" translatesAutoresizingMaskIntoConstraints="NO" id="g9y-BK-I8i" userLabel="Static Hotdog Image">
-                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="WBT-kG-fUn"/>
                                     <constraint firstAttribute="width" constant="240" id="cpt-Dz-eXc"/>
@@ -39,7 +49,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <state key="normal" title="Share">
+                                <state key="normal" title="Share!">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -52,15 +62,17 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.94509803921568625" green="0.78431372549019607" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="g9y-BK-I8i" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1ld-8I-eFN"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Cw9-Ia-H9q"/>
+                            <constraint firstItem="g9y-BK-I8i" firstAttribute="top" secondItem="v2F-Ha-xOi" secondAttribute="bottom" constant="20" id="KnD-9F-Ei7"/>
                             <constraint firstItem="g9y-BK-I8i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MO0-0M-LEN"/>
                             <constraint firstItem="d0z-8C-MUC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R0Y-eB-naO"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="RmR-CW-P83"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d0z-8C-MUC" secondAttribute="trailing" id="dzq-In-vZJ"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fWn-FI-bpr"/>
+                            <constraint firstItem="v2F-Ha-xOi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h7R-wE-rYv"/>
                             <constraint firstItem="d9k-vB-iCD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hUB-xL-lOe"/>
                             <constraint firstItem="d0z-8C-MUC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uK0-9N-5Tj"/>
                         </constraints>

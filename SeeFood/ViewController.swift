@@ -94,20 +94,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             
             SVProgressHUD.dismiss()
             
-//            self.shareButton.isHidden = false
+            self.shareButton.isHidden = false
             
 //            print(results)
             
             if let firstResult = results.first {
                 if firstResult.identifier.contains("hotdog") {
                     self.navigationItem.title = "Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.green
+                    self.navigationController?.navigationBar.barTintColor = UIColor(red: 0/256, green: 249/256, blue: 0/256, alpha: 1.0)
                     self.navigationController?.navigationBar.isTranslucent = false
                     self.topBarImageView.image = UIImage(named:"hotdog")
                     self.cucceessSound.play()
                 } else {
                     self.navigationItem.title = "Not Hotdog!"
-                    self.navigationController?.navigationBar.barTintColor = UIColor.red
+                    self.navigationController?.navigationBar.barTintColor = UIColor(red: 255/256, green: 126/256, blue: 121/256, alpha: 1.0)
                     self.navigationController?.navigationBar.isTranslucent = false
                     self.topBarImageView.image = UIImage(named:"not-hotdog")
                     self.failSound.play()
